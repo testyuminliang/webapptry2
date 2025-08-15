@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask全栈应用示例</title>
+    <style>
+        body { font-family: sans-serif; margin: 2em; }
+        #user-container { background-color: #f0f0f0; border: 1px solid #ccc; padding: 1em; margin-top: 1em; white-space: pre-wrap; }
+        button { font-size: 1.1em; padding: 0.5em 1em; }
+    </style>
+</head>
+<body>
+
+    <h1>前端页面</h1>
+    <p>点击下面的按钮，前端的JavaScript会去调用后端的API来获取数据。</p>
+
+    <button id="fetch-user-btn">获取用户数据</button>
+
+    <div id="user-container">
+        </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+</html>
