@@ -44,3 +44,14 @@ def delete_user(user_id):
     db.session.delete(user)
     db.session.commit()
     return '', 204
+
+
+# app/api/users.py
+# ... (在文件末尾追加) ...
+
+@users_api_bp.route('/test-500', methods=['GET'])
+def test_500_error():
+    # 我们在这里故意制造一个无法处理的bug
+    # 任何数除以0都会在Python中引发 ZeroDivisionError
+    result = 1 / 0
+    return jsonify({"message": "You will never see this message"})
